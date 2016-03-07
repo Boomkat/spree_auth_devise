@@ -3,7 +3,7 @@ module Spree
     include UserAddress
     include UserPaymentSource
 
-    devise :database_authenticatable, :registerable, :recoverable,
+    devise :database_authenticatable, :registerable, :recoverable, :lockable,
            :rememberable, :trackable, :validatable, :encryptable, :encryptor => 'authlogic_sha512'
     devise :confirmable if Spree::Auth::Config[:confirmable]
 
